@@ -253,10 +253,6 @@ docker pull ${DOCKER_REPO}/xuez-masternode
 docker tag ${DOCKER_REPO}/xuez-masternode xuez-rpc-server
 docker run -p ${RPC_PORT}:${RPC_PORT} --name ${CONTAINER_NAME} -e XIP="${XIP}" -e XPWD="${XPWD}" -e MN_KEY="NOT_NEEDED" -v /home/xuez:/home/xuez:rw -d xuez-rpc-server
 
-# Change the config file to run as RPC server
-sleep 10
-sed -i "s/^\(masternode=\).*/masternode=0/" /home/xuez/.xuez/xuez.conf
-
 #
 # Show result and give user instructions
 #
