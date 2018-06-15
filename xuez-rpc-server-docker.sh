@@ -256,7 +256,7 @@ docker run -p ${RPC_PORT}:${RPC_PORT} --name ${CONTAINER_NAME} -e XIP="${XIP}" -
 # Change the config file to run as RPC server
 sleep 10
 sed -i "s/^\(masternode=\).*/masternode=0/" /home/xuez/.xuez/xuez.conf
-sed -i "s/^\(masternodeprivkey=\).*/masternodeprivkey=NOT_:NEEDED/" /home/xuez/.xuez/xuez.conf
+sed -i "s/^\(masternodeprivkey=\).*/masternodeprivkey=NOT_NEEDED/" /home/xuez/.xuez/xuez.conf
 
 #
 # Show result and give user instructions
