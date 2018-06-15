@@ -27,6 +27,8 @@ if [[ $REUSE =~ "N" ]] || [[ $REUSE =~ "n" ]]; then
 	hostname -I
 	printf "\nEnter the IP-address of your XUEZ RPC Server and Hit [ENTER]: "
         read XIP
+        printf "Enter new Password for [xuez] user and Hit [ENTER]: "
+        read XPWD
 else
         source $CONFIG
 	XIP=$(echo $externalip)
