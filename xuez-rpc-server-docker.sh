@@ -5,6 +5,9 @@ DOCKER_REPO="dalijolijo"
 CONFIG="/home/xuez/.xuez/xuez.conf"
 CONTAINER_NAME="xuez-rpc-server"
 RPC_PORT="41798"
+WEB="xuezcoin.com" # without "https://" and without the last "/" (only HTTPS accepted)
+BOOTSTRAP="bootstrap.tar.gz"
+
 
 #
 # Check if xuez.conf already exist. Set xuez user pwd.
@@ -251,7 +254,7 @@ fi
 docker rm ${CONTAINER_NAME} >/dev/null
 docker pull ${DOCKER_REPO}/xuez-masternode
 docker tag ${DOCKER_REPO}/xuez-masternode xuez-rpc-server
-docker run -p ${RPC_PORT}:${RPC_PORT} --name ${CONTAINER_NAME} -e XIP="${XIP}" -e XPWD="${XPWD}" -e MN_KEY="NOT_NEEDED" -v /home/xuez:/home/xuez:rw -d xuez-rpc-server
+docker run -p ${RPC_PORT}:${RPC_PORT} --name ${CONTAINER_NAME} -e XIP="${XIP}" -e XPWD="${XPWD}" -e MN_KEY="NOT_NEEDED" -e WEB="${WEB}" -e BOOTSTRAP="${BOOTSTRAP}" -v /home/xuez:/home/xuez:rw -d xuez-rpc-server
 
 #
 # Show result and give user instructions
