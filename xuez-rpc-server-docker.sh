@@ -250,7 +250,8 @@ if [ $? -eq 0 ];then
 fi
 docker rm ${CONTAINER_NAME} >/dev/null
 docker pull ${DOCKER_REPO}/xuez-masternode
-docker run -p ${RPC_PORT}:${RPC_PORT} --name ${CONTAINER_NAME} -e XIP="${XIP}" -e XPWD="${XPWD}" -v /home/xuez:/home/xuez:rw -d ${DOCKER_REPO}/xuez-rpc-server
+docker tag ${DOCKER_REPO}/xuez-masternode xuez-rpc-server
+docker run -p ${RPC_PORT}:${RPC_PORT} --name ${CONTAINER_NAME} -e XIP="${XIP}" -e XPWD="${XPWD}" -v /home/xuez:/home/xuez:rw -d xuez-rpc-server
 
 # Change the config file to run as RPC server
 sed -i "s/^\(masternode=\).*/masternode=1/" /home/xuez/.xuez/xuez.conf
