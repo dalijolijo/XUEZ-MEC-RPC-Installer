@@ -5,7 +5,7 @@ DOCKER_REPO="dalijolijo"
 CONFIG="/home/xuez/.xuez/xuez.conf"
 CONTAINER_NAME="xuez-rpc-server"
 RPC_PORT="41798"
-WEB="xuezcoin.com" # without "https://" and without the last "/" (only HTTPS accepted)
+WEB="github.com/dalijolijo/XUEZ-Masternode-Setup/blob/master" # without "https://" and without the last "/" (only HTTPS accepted)
 BOOTSTRAP="bootstrap.tar.gz"
 
 
